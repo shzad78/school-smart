@@ -1,11 +1,10 @@
-import SiteHeader from "@/components/site-header";
+import HeroSection from "@/components/forntend/hero-section";
 import React from "react";
 
 export default function page() {
   return (
     <div>
-      <SiteHeader />
-      <h2>HomePage</h2>
+      <HeroSection />
     </div>
   );
 }
