@@ -7,7 +7,7 @@ import { Card, CardContent, CardFooter } from "../components/ui/card";
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center p-4 bg-gray-50">
-      <Card className="w-full max-w-lg text-center">
+      <Card className="w-full max-w-2xl text-center">
         <CardContent className="pt-16 pb-10 px-4 space-y-6">
           {/* Icon */}
           <div className="mx-auto w-24 h-24 bg-red-500 rounded-full flex items-center justify-center">
