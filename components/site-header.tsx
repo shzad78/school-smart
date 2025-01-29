@@ -180,7 +180,7 @@ export default function SiteHeader() {
             <Link href={"/login"}>Log in</Link>
           </Button>
           <Button>
-            <Link href={"/contat-us"}>Book Demo</Link>
+            <Link href={"/contact-us"}>Book Demo</Link>
           </Button>
         </div>
 

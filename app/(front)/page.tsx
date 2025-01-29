@@ -1,4 +1,4 @@
-import HeroSection from "@/components/forntend/hero-section";
+import HeroSection from "@/components/frontend/hero-section";
 import React from "react";
 
 export default function page() {

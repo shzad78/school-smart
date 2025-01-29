@@ -1,4 +1,4 @@
-import Login from '@/components/forntend/auth/login'
+import Login from '@/components/frontend/auth/login'
 import React from 'react'
 
 export default function page() {
