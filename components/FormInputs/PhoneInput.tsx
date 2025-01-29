@@ -1,9 +1,15 @@
 import React from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css"; // Default styles, can be customized
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { CircleHelp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { RegisterInputProps } from "../frontend/contact-us";
 
 type PhoneInputProps = {
   register: any;
@@ -14,7 +20,7 @@ type PhoneInputProps = {
   placeholder?: string;
   defaultCountry?: string;
   control: any; // React Hook Form control
-  setValue: (name: string, value: any) => void;
+  setValue: (name: keyof RegisterInputProps, value: any) => void
   icon?: any; // Icon component
 };
 
@@ -25,7 +31,7 @@ export default function PhoneNumberInput({
   name,
   toolTipText,
   placeholder,
-  defaultCountry = "us",
+  defaultCountry = "pk",
   setValue,
   icon,
 }: PhoneInputProps) {
@@ -34,7 +40,10 @@ export default function PhoneNumberInput({
   return (
     <div>
       <div className="flex space-x-2 items-center">
-        <label htmlFor={name} className="block text-sm font-medium leading-6 text-gray-900">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium leading-6 text-gray-900"
+        >
           {label}
         </label>
         {toolTipText && (
@@ -61,7 +70,9 @@ export default function PhoneNumberInput({
         <PhoneInput
           country={defaultCountry}
           value=""
-          onChange={(value) => setValue(name, value)}
+          onChange={(value) =>
+            setValue(name as keyof RegisterInputProps, value)
+          }
           inputProps={{
             name: name,
             className: cn(
@@ -74,7 +85,9 @@ export default function PhoneNumberInput({
           inputClass="w-full pl-10" // Ensures text doesn't overlap with the icon
         />
       </div>
-      {errors[name] && <span className="text-xs text-red-600">{label} is required</span>}
+      {errors[name] && (
+        <span className="text-xs text-red-600">{label} is required</span>
+      )}
     </div>
   );
 }

@@ -10,20 +10,25 @@ import PhoneNumberInput from "../FormInputs/PhoneInput";
 export type RegisterInputProps = {
   email: string;
   password: string;
+  name: string;
+  phone: string;
 };
 const ContactUs: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm<RegisterInputProps>();
-async function onSubmit(data: RegisterInputProps) {
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterInputProps>();
+  async function onSubmit(data: RegisterInputProps) {
     setIsLoading(true);
     try {
       console.log(data);
-      
     } finally {
       setIsLoading(false);
     }
   }
- 
 
   return (
     <section className="bg-gray-100 py-16 px-4">
@@ -65,49 +70,51 @@ async function onSubmit(data: RegisterInputProps) {
           </div>
 
           <div className="col-span-2 bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-xl font-semibold mb-4">Sign up for onboarding your school today</h3>
+            <h3 className="text-xl font-semibold mb-4">
+              Sign up for onboarding your school today
+            </h3>
             <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col">
-            <TextInput
-                label="Full Name" 
-                register={register}
-                name="name"
-                type="text"
-                errors={errors}
-                placeholder=" John Doe"
-                icon={UserRound}
-                
-              />
-               </div>
+              <div className="flex flex-col">
+                <TextInput
+                  label="Full Name"
+                  register={register}
+                  name="name"
+                  type="text"
+                  errors={errors}
+                  placeholder=" John Doe"
+                  icon={UserRound}
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-4 py-3">
                 <div className="flex flex-col">
-                <TextInput
-                label="Email Address"
-                register={register}
-                name="email"
-                type="email"
-                errors={errors}
-                placeholder=" eg. johndoe@gmail.com"
-                icon={Mail}
-              />
-              {errors.email && (
-                <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
-              )}
-              </div>
+                  <TextInput
+                    label="Email Address"
+                    register={register}
+                    name="email"
+                    type="email"
+                    errors={errors}
+                    placeholder=" eg. johndoe@gmail.com"
+                    icon={Mail}
+                  />
+                  {errors.email && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
                 <div className="flex flex-col">
                   <PhoneNumberInput
                     label="Phone Number"
                     register={register}
                     name="phone"
-
+                    setValue={setValue}
                     errors={errors}
                     placeholder=" +234 123 456 7890"
-                    icon={Phone} control={undefined} setValue={function (name: string, value: any): void {
-                      throw new Error("Function not implemented.");
-                    } }                  />
-                
-              </div>
-              
+                    icon={Phone}
+                    control={undefined}
+                  />
+                </div>
+
                 <div className="flex flex-col">
                   <TextInput
                     label="School Name"
@@ -118,7 +125,6 @@ async function onSubmit(data: RegisterInputProps) {
                     placeholder=" Vincent High School"
                     icon={School}
                   />
-                
                 </div>
                 <div className="flex flex-col">
                   <TextInput
@@ -130,26 +136,22 @@ async function onSubmit(data: RegisterInputProps) {
                     placeholder=" 123, Main Street, Lagos"
                     icon={Map}
                   />
-                
+                </div>
               </div>
-              
-            </div>
 
-            
-          
-
-            <SubmitButton  className="w-full"
-            buttonIcon={Send} 
-            title="Submit"
-            loading={isLoading}
-            loadingTitle="Submitting Please wait..."
-            />
-          </form>
+              <SubmitButton
+                className="w-full"
+                buttonIcon={Send}
+                title="Submit"
+                loading={isLoading}
+                loadingTitle="Submitting Please wait..."
+              />
+            </form>
           </div>
         </div>
       </div>
     </section>
-  );  
+  );
 };
 
 export default ContactUs;
