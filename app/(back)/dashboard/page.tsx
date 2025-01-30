@@ -11,11 +11,24 @@ export default function SidebarV3() {
 
   return (
     <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <AppHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        <DashboardContent />
-      </SidebarInset>
+      <div className="flex">
+        <div className="w-64 p-0 m-0">
+          {" "}
+          {/* Remove padding and margin */}
+          <AppSidebar />
+        </div>
+        <div className="flex-1 p-0 m-0">
+          {" "}
+          {/* Remove padding and margin */}
+          <AppHeader
+            searchQuery={""}
+            setSearchQuery={function (value: string): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+          <DashboardContent />
+        </div>
+      </div>
     </SidebarProvider>
   );
 }

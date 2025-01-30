@@ -1,19 +1,18 @@
 // data.ts
-import { AppData } from "./types";
 import {
-  GalleryVerticalEnd,
-  AudioWaveform,
-  Command,
-  SquareTerminal,
-  Bot,
+  LayoutDashboard,
+  Users,
   BookOpen,
-  Settings2,
-  Frame,
-  PieChart,
-  Map,
+  UserCog,
+  MessageSquare,
+  CreditCard,
+  Bus,
+  Library,
+  FileText,
+  Settings,
 } from "lucide-react";
 
-export const data: AppData = {
+export const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -22,79 +21,217 @@ export const data: AppData = {
   teams: [
     {
       name: "Acme Inc",
-      logo: GalleryVerticalEnd,
+      logo: LayoutDashboard,
       plan: "Enterprise",
     },
     {
       name: "Acme Corp.",
-      logo: AudioWaveform,
+      logo: Users,
       plan: "Startup",
     },
     {
       name: "Evil Corp.",
-      logo: Command,
+      logo: BookOpen,
       plan: "Free",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
+          title: "Overview",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Student Management",
       url: "#",
-      icon: Bot,
+      icon: Users,
       items: [
         {
-          title: "Genesis",
+          title: "Student Directory",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Enrollment",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Attendance",
+          url: "#",
+        },
+        {
+          title: "Performance",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Academics",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Curriculum",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Timetable",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "Examinations",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "Assignments",
+          url: "#",
+        },
+        {
+          title: "Report Cards",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Staff Management",
+      url: "#",
+      icon: UserCog,
+      items: [
+        {
+          title: "Staff Directory",
+          url: "#",
+        },
+        {
+          title: "Attendance",
+          url: "#",
+        },
+        {
+          title: "Leave Management",
+          url: "#",
+        },
+        {
+          title: "Performance",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Communication",
+      url: "#",
+      icon: MessageSquare,
+      items: [
+        {
+          title: "Messages",
+          url: "#",
+        },
+        {
+          title: "Announcements",
+          url: "#",
+        },
+        {
+          title: "Notice Board",
+          url: "#",
+        },
+        {
+          title: "Emergency Alerts",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Finance",
+      url: "#",
+      icon: CreditCard,
+      items: [
+        {
+          title: "Fee Management",
+          url: "#",
+        },
+        {
+          title: "Payments",
+          url: "#",
+        },
+        {
+          title: "Scholarships",
+          url: "#",
+        },
+        {
+          title: "Reports",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Transport",
+      url: "#",
+      icon: Bus,
+      items: [
+        {
+          title: "Routes",
+          url: "#",
+        },
+        {
+          title: "Tracking",
+          url: "#",
+        },
+        {
+          title: "Drivers",
+          url: "#",
+        },
+        {
+          title: "Maintenance",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      url: "#",
+      icon: Library,
+      items: [
+        {
+          title: "Library",
+          url: "#",
+        },
+        {
+          title: "Inventory",
+          url: "#",
+        },
+        {
+          title: "Facilities",
+          url: "#",
+        },
+        {
+          title: "Assets",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Reports & Analytics",
+      url: "#",
+      icon: FileText,
+      items: [
+        {
+          title: "Academic Reports",
+          url: "#",
+        },
+        {
+          title: "Financial Reports",
+          url: "#",
+        },
+        {
+          title: "Custom Reports",
+          url: "#",
+        },
+        {
+          title: "Analytics Dashboard",
           url: "#",
         },
       ],
@@ -102,22 +239,22 @@ export const data: AppData = {
     {
       title: "Settings",
       url: "#",
-      icon: Settings2,
+      icon: Settings,
       items: [
         {
-          title: "General",
+          title: "School Profile",
           url: "#",
         },
         {
-          title: "Team",
+          title: "User Management",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "System Settings",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "Backup & Security",
           url: "#",
         },
       ],
@@ -127,17 +264,17 @@ export const data: AppData = {
     {
       name: "Design Engineering",
       url: "#",
-      icon: Frame,
+      icon: LayoutDashboard,
     },
     {
       name: "Sales & Marketing",
       url: "#",
-      icon: PieChart,
+      icon: Users,
     },
     {
       name: "Travel",
       url: "#",
-      icon: Map,
+      icon: BookOpen,
     },
   ],
 };
